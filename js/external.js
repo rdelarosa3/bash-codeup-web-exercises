@@ -19,7 +19,7 @@ var total = "Your total $"+subtotal.toFixed(2);
 var movies = [
     {title: "Brother Bear", days: 5},
     {title: "Hercules", days: 1},
-    {title: "The little mermaid", days: 3};
+    {title: "The little mermaid", days: 3}
 ]
 var totalPrice = 0;
 movies.forEach(function(movie){
@@ -42,7 +42,7 @@ alert(`You are getting $${paycheck.toFixed(2)}. Cha-ching!!`);
 var jobsWorked=[
     {company: "google", rate: 400, hours: 6},
     {company: "facebook", rate: 350, hours:10},
-    {company: "amazon", rate: 300, hours: 5};
+    {company: "amazon", rate: 300, hours: 5}
 ]
 var totalPayment = 0;
 
