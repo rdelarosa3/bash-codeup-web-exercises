@@ -78,6 +78,8 @@ function calculateTip(perc,total){
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+//user interaction with calculateTip function
 alert(`Your tip is: $${calculateTip(prompt("Tip Percentage:"), prompt("Bill Total:"))}`);
 /**
  * TODO:
@@ -95,6 +97,7 @@ alert(`Your tip is: $${calculateTip(prompt("Tip Percentage:"), prompt("Bill Tota
  */
 var originalPrice = 100,
     discountPercent = .2;
+
 function applyDiscount(price, perc){
     let discountPrice = price - (price * perc);
     return discountPrice.toFixed(2);
