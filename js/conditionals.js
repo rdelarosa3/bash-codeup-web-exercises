@@ -108,38 +108,29 @@ alert(analyzeColorRefactored(prompt("whats is your favorite color")));
 // amount, and returns the discounted price.
 function calculateTotal(lucky,total) {
     let discount;
-    if((!isNaN(parseInt(total)))){
-        switch (lucky) {
-            case 1:
-                discount = .1;
-                break;
-            case 2:
-                discount = .25;
-                break
-            case 3:
-                discount = .35;
-                break;
-            case 4:
-                discount = .50;
-                break;
-            case 5:
-                discount = 1;
-                break;
-            default:
-                discount = 0;
-        }
-        let discountedPrice = total - (total * discount);
-        alert(`
-                Your total before discount was: $${parseInt(total).toFixed(2)}.
-                Your lucky number is: ${lucky}. 
-                Your discount is: ${discount * 100}%.
-                Your price after discount is $${discountedPrice.toFixed(2)}.
-            `);
-        return discountedPrice;
+    switch (lucky) {
+        case 1:
+            discount = .1;
+            break;
+        case 2:
+            discount = .25;
+            break
+        case 3:
+            discount = .35;
+            break;
+        case 4:
+            discount = .50;
+            break;
+        case 5:
+            discount = 1;
+            break;
+        case 0:
+            discount = 0;
+            break;
+        default:
+            return alert("Error!! Invalid Lucky Number.");
     }
-    else{
-        alert("Sorry, You did not enter a numerical value.")
-    }
+    return total - (total * discount);
 }
 calculateTotal(0, 100);
 calculateTotal(4, 100);
@@ -155,8 +146,13 @@ calculateTotal(5, "eight");
 
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
-calculateTotal(luckyNumber,prompt("what is your total?"));
-
+var totalBill = parseFloat(prompt("what is your total?"));
+calculateTotal(luckyNumber,totalBill);
+alert(`
+            Your total before discount was: $${totalBill.toFixed(2)}.
+            Your lucky number is: ${luckyNumber}. 
+            Your price after discount is $${calculateTotal(luckyNumber,totalBill).toFixed(2)}.
+    `);
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -174,22 +170,18 @@ calculateTotal(luckyNumber,prompt("what is your total?"));
  * HINT: The way we prompt for a value could be improved
  */
 
-function oddEven(){
-    // Does User want a number?
+function getNumberFromUser(){
     if(confirm("Would you like to pick a number")){
         let num = parseInt(prompt("Enter a number:"));
-        // is input a number?
         if(!isNaN(num)){
-            // is even or odd?
-            num % 2 === 0 ? alert("Your Number is Even") : alert("Your Number is Odd");
-            // number + 100
+            alert(`Your Number is ${num % 2 === 0 ? "Positive": "Negative"}.`);
             alert(`Your Number if added to 100 is: ${num + 100}`);
-            // number - or +
-            num >= 0 ? alert("Your Number is Positive") : alert("Your Number is Negative.");
+            alert(`Your Number is ${num >= 0 ? "positive": "negative"}.`);
         }
         else
         {
-            alert("Sorry, You did not enter a numerical value.")
+            alert("Sorry, You did not enter a numerical value. Please Try Again")
+            getNumberFromUser();
         }
     }
     else {
@@ -197,4 +189,4 @@ function oddEven(){
     }
 }
 
-oddEven();
+getNumberFromUser();
