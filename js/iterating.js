@@ -54,15 +54,17 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
     function first(arg){
-        console.log(arg[0]);
+        if (Array.isArray(arg)) console.log(arg[0]);
+
     }
     function second(arg) {
-        console.log(arg[1]);
+        if (Array.isArray(arg)) console.log(arg[1]);
     }
     function last(arg){
-        console.log(arg[arg.length-1]);
+        if (Array.isArray(arg)) console.log(arg[arg.length-1]);
     }
-    first([1, 2, 3, 4, 5]) // returns 1
-    second([1, 2, 3, 4, 5]) // returns 2
-    last([1, 2, 3, 4, 5]) // return 5
+    const arr= [1, 2, 3, 4, 5];
+    first(arr) // returns 1
+    second("string") // returns 2
+    last(arr) // return 5
 })();
