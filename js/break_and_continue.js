@@ -1,8 +1,13 @@
 //1
 
 while(true){
-    var message = parseInt(prompt("please enter odd number between 1 and 50"));
-    if(!(message%2 === 0 || isNaN(message))){
+    var message = parseInt(prompt("Please enter odd number between 1 and 50"));
+    if(
+        message%2 !== 0 &&
+        !isNaN(message) &&
+        message>0 &&
+        message<51
+    ){
         break;
     }
     alert("Invalid Number");
