@@ -13,6 +13,7 @@ while(true){
     alert("Invalid Number");
 }
 console.log(`Number to skip: ${message}`)
+// for(let i = 1; i<=50;i+=2)---clever way of solving
 for(let i = 1; i<=50;i++){
     if(i%2 !== 0){
         if(i === message){
