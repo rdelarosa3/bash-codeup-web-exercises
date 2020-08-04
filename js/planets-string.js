@@ -26,6 +26,7 @@
      */
     var planetsBreak = planetsArray.join("<br/>");
     console.log(planetsBreak);
-    var newPlanetsString = "<ul><li>"+planetsArray.join("</li><li>")+"</li></ul>";
-    console.log(newPlanetsString);
+    var planetsList = "<ul><li>"+planetsArray.join("</li><li>")+"</li></ul>";
+    document.write(planetsList);
+
 })();
