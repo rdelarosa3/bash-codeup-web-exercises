@@ -22,9 +22,13 @@ function isTaxExempt(typeOfGood){
     let exemptGoods = ["book","food","medical"];
     return exemptGoods.includes(typeOfGood);
 }
+// Check if item is imported
+function isImported() {
+    return confirm("Is good Imported?");
+}
 // create products for the store
-function createProduct(goodName,goodType, goodPrice){
-    let isImport = confirm("Is good Imported?");
+function createProduct(goodName,goodType, goodPrice,goodImported){
+    let isImport = goodImported;
     let isExempt = isTaxExempt(goodType);
     let salesTax = .1
     if(isImport){
@@ -57,10 +61,28 @@ function totalCalc(cart) {
     console.log((subtotal+salesTax).toFixed(2));
     return (subtotal+salesTax).toFixed(2);
 }
-
+alert("LETS CREATE SOME PRODUCTS");
 // Create sample store products
-createProduct("book1","book",12.49);
-createProduct("music cd","music",14.99);
-createProduct("chocolate","food",.85)
-// calculate total of products in store
-totalCalc(storeGoods);
+createProduct("book1","book",12.49,false);
+createProduct("music cd","music",14.99,false);
+createProduct("chocolate","food",.85,true)
+
+// shopping cart to add store goods to buy
+var shoppingCart= [];
+
+alert("RANDOMLY ADDING ITEMS TO CART");
+// randomly grab store goods to put in cart
+var randomNum = Math.floor(Math.random() * (storeGoods.length));
+shoppingCart.push(storeGoods[randomNum]);
+randomNum = Math.floor(Math.random() * (storeGoods.length));
+shoppingCart.push(storeGoods[randomNum]);
+
+// check what is in the cart
+console.log(shoppingCart);
+
+// calculate total of products bought
+totalCalc(shoppingCart);
+alert("CHECK RECEIPT IN CONSOLE");
+// storeGoods.filter(function(obj){
+//     return obj.productName === "music cd";
+// })
