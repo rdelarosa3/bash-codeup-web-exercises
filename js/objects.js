@@ -14,9 +14,6 @@
     var person = {
         firstName: "Robert",
         lastName: "DelaRosa",
-        // sayHello: function(){
-        //     return `Hello from ${this.firstName} ${this.lastName}!`;
-        // }
     }
 
     console.log(person.firstName);
@@ -141,9 +138,10 @@
      */
     books.forEach(function (book,ind) {
         console.log(`
-        Book: #${ind+1};
+        Book: # ${ind+1}
         Title: ${book.title}
-        Author:${book.author.firstName +" "+ book.author.lastName}
+        Author: ${book.author.firstName +" "+ book.author.lastName}
+        ---
         `);
     })
     /**
@@ -166,12 +164,15 @@
         })
     }
     createBook("War and Peace","Tolstoy","");
-    console.log(books[books.length-1]);
-    books.forEach(function (book,ind) {
-        console.log(`
-        Book: #${ind+1};
-        Title: ${book.title} 
-        Author:${book.author.firstName +" "+ book.author.lastName}
-        `);
-    })
+    var showBookInfo = function(library) {
+        library.forEach(function (book, ind) {
+            console.log(`
+            Book: # ${ind + 1};
+            Title: ${book.title} 
+            Author: ${book.author.firstName + " " + book.author.lastName}
+            ---
+            `);
+        })
+    }
+    showBookInfo(books);
 })();
