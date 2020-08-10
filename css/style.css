@@ -1,4 +1,64 @@
-.fancy-header {
-    color: purple;
+body{
+    background-color: lightskyblue;
+    background-image: url("../img/torn.png");
+    font-family: 'Roboto', sans-serif;
+}
+
+
+h1, h2, h3 {
+    color: darkblue;
     text-decoration: underline;
+    font-family: 'Red Rose', cursive;
+
+}
+ul {
+    list-style-type:  square;
+}
+.container{
+    margin: 50px auto;
+    width: 500px;
+    padding: 10px;
+}
+
+#process ol{
+    list-style-type: upper-roman;
+}
+
+#products table, th, td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: left;
+}
+
+#products table tr:hover {
+    background-color: #f5f5f5;
+}
+
+#products table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+#products table th {
+    height: 50px;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color:yellow;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:red;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:orange;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
 }
