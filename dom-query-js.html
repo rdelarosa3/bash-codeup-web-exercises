@@ -46,9 +46,9 @@
             listItems[i].style.color = "grey";
         }
         /** alternative solution **/
-        Array.from(listItems).forEach((li,ind)=>{
-            if(ind%2!==0) li.style.color = 'grey';
-        })
+        // Array.from(listItems).forEach((li,ind)=>{
+        //     if(ind%2!==0) li.style.color = 'grey';
+        // })
         // TODO: Set text color of li with dbid = 1 to blue
         document.querySelector("li[data-dbid='1']").style.color = 'blue';
 
@@ -59,7 +59,7 @@
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished";
+        subParagraphs[0].innerText = "Mission Accomplished";
     })();
 </script>
 </body>
