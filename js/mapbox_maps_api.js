@@ -81,6 +81,4 @@ const getLocation = ()=>{
     }
 
 }
-document.getElementById('search').addEventListener('click',getLocation)
-
-;
+document.getElementById('search').addEventListener('click',getLocation);
