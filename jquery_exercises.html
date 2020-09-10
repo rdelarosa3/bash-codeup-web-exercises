@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div {
+            height:55vh;
+            background:red;
+        }
+        h1 {
+            display:none;
+        }
+    </style>
 </head>
 <body>
     <h1 id="heading">MY HEADING</h1>
     <h1 id="heading2">second heading</h1>
-    <p></p>
+    <div>Scroll Down</div>
+    <h1 id="scroll-to">I am The H1</h1>
+    <p>Paragrapgh</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate deleniti illum laudantium, quia sit voluptatum. Amet atque doloremque ea itaque labore molestiae obcaecati officia omnis optio provident, similique unde.</p>
+    <p>Paragrapgh</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse laudantium odit ratione soluta, vel voluptatibus? Architecto, consequuntur delectus deleniti eius et maiores minima nam numquam perferendis quae sed tempore. Nisi.</p>
     <div id="myDiv">MY DIV</div>
     <ul>
         <li class="codeup">
@@ -24,11 +38,105 @@
 <script src="js/jquery-2.2.4.js" ></script>
 <script>
     $(document).ready(function () {
-        $('li').css('font-size','20px');
-        $('h1, p, li').css({'background-color':'yellow','color':'black'})
-        $('h1').each(function() {
-            alert.log($(this).html());
+        $('h1').click(function () {
+             $(this).css("background-color","red")
+        })
+        $('p').dblclick(function () {
+             $(this).css('font-size','18px');
+        })
+        $('li').hover(
+            function () {
+                $(this).css('color','red')
+            },
+            function () {
+                $(this).css('color','inherit')
+            }
+        )
+
+        $('#textField').keydown(function (event) {
+            console.log(`the ${event.key} was pressed`)
+            console.log()
+        })
+
+        
+
+        // $(window).scroll(function() {
+        //     var hT = $('li').offset().top,
+        //         hH = $('li').outerHeight(),
+        //         wH = $(window).height(),
+        //         wS = $(this).scrollTop();
+        //     console.log((hT-wH) , wS);
+        //     if (wS > (hT+hH-wH)){
+        //         $('li').fadeIn(3500);
+        //     }
+        // });
+
+
+        //mobile handle on hover event
+        $("div").on("touchstart", function(e) {
+            $(this).css('background','red');
         });
+
+        $("div").on("touchend", function(e) {
+            $(this).css('background','blue');
+        });
+
+
+        // VANILLA JS CHECK IF OBJ IS ON SCREEN
+        // var isOnScreen = function (element) {
+        //     var w = window,
+        //         elBounds = element.getBoundingClientRect(),
+        //         scrollTop = w.pageYOffset,
+        //         elTop = elBounds.y + scrollTop;
+        //     return elTop < (w.innerHeight + scrollTop) &&
+        //         elTop > (scrollTop - elBounds.height);
+        // }
+        // $(window).scroll(function() {
+        //     $('div').each(function () {
+        //         if(isOnScreen(this)){
+        //             console.log("im on the screen");
+        //             setTimeout(()=>{
+        //                 $(this).css('background', 'blue');
+        //             },800)
+        //         }else{
+        //             setTimeout(()=>{
+        //                 $(this).css('background', 'yellow');
+        //             },800)
+        //         }
+        //     })
+        //
+        // })
+
+
+        // Jquery if obj bottom is on screen
+        // const inView = function(el){
+        //     //Window Object
+        //     var win = $(window);
+        //     //Object to Check
+        //     obj = $(el);
+        //     //the top Scroll Position in the page
+        //     var scrollPosition = win.scrollTop();
+        //     //the end of the visible area in the page, starting from the scroll position
+        //     var visibleArea = win.scrollTop() + win.height();
+        //     //the end of the object to check
+        //     var objEndPos = (obj.offset().top + obj.outerHeight());
+        //     return(visibleArea >= objEndPos && scrollPosition <= objEndPos)
+        // };
+        //
+        // $(window).scroll(function(){
+        //         $('div').each(function () {
+        //             if(inView(this)){
+        //                 console.log("im on the screen");
+        //                 setTimeout(()=>{
+        //                     $(this).css('background', 'blue');
+        //                 },800)
+        //             }else{
+        //                 setTimeout(()=>{
+        //                     $(this).css('background', 'yellow');
+        //                 },800)
+        //             }
+        //         })
+        // });
     })
 </script>
 </body>
