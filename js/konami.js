@@ -56,7 +56,6 @@ const playerFeedback = ()=>{
 }
 
 const startTimer = ()=> {
-    // wait 3 seconds before calling goInactive
     timeoutID = window.setTimeout(goInactive, 3000);
 }
 const resetTimer = ()=> {

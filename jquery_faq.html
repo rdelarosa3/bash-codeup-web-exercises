@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="container my-5 d-flex justify-content-center">
+    <dl>
+        <dt>Joshua Tree National Park</dt>
+        <dd class="invisible">There are more than 4,500 established rock climbing routes contained within the 100,000
+            acres
+        </dd>
+        <dt>Sequoia and Kings Canyon National Parks</dt>
+        <dd class="invisible">Includes glaciers, rugged rock faces and steep inclines – all the features rock climbers
+            desire.
+        </dd>
+        <dt>Yosemite National Park</dt>
+        <dd class="invisible">Featuring crack climbs and multi-day climbs along bare rock faces, Yosemite National Park
+            in California is one of the most popular areas for rock climbers. One of the most challenging climbs is
+            nicknamed El Capitan.
+        </dd>
+        <dt>Black Canyon of the Gunnison National Park</dt>
+        <dd class="invisible">The canyon of the very narrow Black Canyon of the Gunnison National Park in Colorado is
+            2,722 feet deep at its deepest point at Warner Point.
+        </dd>
+        <dt>Rocky Mountain National Park</dt>
+        <dd class="invisible">Colorado is a rock climber’s paradise, with numerous challenging climbs, including climbs
+            within Rocky Mountain National Park.
+        </dd>
+        <dt>Arcadia National Park</dt>
+        <dd class="invisible">Otter Cliffs and Great Head provide rare sea cliff climbing challenges. The rock faces
+            within Arcadia were created during the last period of continental glacier coverage in North America.
+        </dd>
+        <dt>Arches National Park</dt>
+        <dd class="invisible">Utah is sandy; nonetheless, the park features excellent climbing areas. Most of the rock
+            climbing routes contained within Arches National Park are meant for advanced climbers only.
+        </dd>
+        <dt>Capitol Reef National Park</dt>
+        <dd class="invisible">The hardness of the sandstone contained within Capitol Reef varies from soft and crumbly
+            at Entrada to relatively hard at Wingate. Wingate is the most popular area for climbing because of its many
+            natural cracks for climbing without technical equipment.
+        </dd>
+        <dt>Zion National Park</dt>
+        <dd class="invisible">Utah requires advanced climbing skills and appropriate technical equipment to navigate its
+            rock faces. Visitor centers located within the park provide useful climbing information.
+        </dd>
+        <dt> Grand Teton National Park</dt>
+        <dd class="invisible">Jenny Lake Ranger Station provides useful rock climbing information and equipment from
+            June to mid-September. Moose Visitor Center provides information during the rest of the year.
+        </dd>
+    </dl>
+</div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+    const defList = $('dt');
+    defList.click(function(){
+       $(this).css({'background-color':'yellow','color':'black'});
+    })
+    $( "<div class='badge badge-pill badge-info showDD'>See Info</div>" ).insertBefore( $( "dd" ) );
+    $(document).on('click','.showDD', function(){
+        ($(this).html() === 'See Info') ? $(this).html('Hide Info'):$(this).html('See Info');
+        $(this).next().toggleClass('invisible');
+    })
+})
+</script>
+</body>
+</html>
