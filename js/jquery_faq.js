@@ -24,8 +24,18 @@ $(document).ready(function () {
         $(this).parent().children().first().toggleClass("text-primary")
     })
 
+    $('.closeDiv').click(function () {
+        console.log(this);
+        console.log($(this).parent());
+        $(this).parent().hide().toggleClass('d-flex');
+    })
 
-    // BONUS
+    $('h3').next().hide();
+    setTimeout(()=>{
+        $('#myModal').modal('toggle');
+    },8000)
+
+    // BONUS PICTURE FRAMES
     $('#frame1, #frame2, #frame3').click(function () { swapImage(this) });
 
     function swapImage(frame) {
@@ -43,15 +53,4 @@ $(document).ready(function () {
         thisImg.attr("src", otherImgSrc);
         otherImg.attr("src", thisImgSrc);
     }
-
-    $('.closeDiv').click(function () {
-        console.log(this);
-        console.log($(this).parent());
-        $(this).parent().hide().toggleClass('d-flex');
-    })
-
-    $('h3').next().hide();
-    setTimeout(()=>{
-        $('#myModal').modal('toggle');
-    },8000)
 })
