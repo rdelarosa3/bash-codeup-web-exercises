@@ -15,6 +15,10 @@
     </style>
 </head>
 <body>
+<div class="alert alert-info mt-5 d-flex justify-content-center" role="alert" >
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span class="ml-2 closeDiv">x</span>
+</div>
 <div class="container my-5">
     <section>
         <dl class="row d-flex justify-content-center">
@@ -158,6 +162,21 @@
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">WOULD YOU LIKE TO REGISTER</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

@@ -17,6 +17,7 @@ $(document).ready(function () {
 
     $( "h3" ).click(function () {
         $(this).next().toggleClass("font-weight-bold");
+        $(this).next().slideToggle();
     })
 
     $( "li" ).click(function () {
@@ -42,4 +43,15 @@ $(document).ready(function () {
         thisImg.attr("src", otherImgSrc);
         otherImg.attr("src", thisImgSrc);
     }
+
+    $('.closeDiv').click(function () {
+        console.log(this);
+        console.log($(this).parent());
+        $(this).parent().hide().toggleClass('d-flex');
+    })
+
+    $('h3').next().hide();
+    setTimeout(()=>{
+        $('#myModal').modal('toggle');
+    },8000)
 })
