@@ -70,7 +70,7 @@ $(document).ready(function () {
     })
     $( "<div class='badge badge-pill badge-info showDD'>See Info</div>" ).insertBefore( $( "dd" ) );
     $(document).on('click','.showDD', function(){
-        ($(this).html() === 'See Info') ? $(this).html('Hide Info'):$(this).html('See Info');
+        $(this).html( $(this).html() === 'See Info' ? 'Hide Info':'See Info');
         $(this).next().toggleClass('invisible');
     })
 })
