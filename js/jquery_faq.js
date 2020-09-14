@@ -25,12 +25,11 @@ $(document).ready(function () {
     })
 
     $('.closeDiv').click(function () {
-        console.log(this);
-        console.log($(this).parent());
         $(this).parent().hide().toggleClass('d-flex');
     })
 
     $('h3').next().hide();
+    
     setTimeout(()=>{
         $('#myModal').modal('toggle');
     },8000)
