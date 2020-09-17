@@ -48,10 +48,8 @@
     const loadInventory = ()=>{
         $.ajax("data/inventory.json")
             .done(function (data,status,jqXhr) {
-                let inventoryItems = data;
-                let productsHtml = $('#insertProducts');
-                inventoryItems.forEach((item,index)=>{
-                    productsHtml.append( `
+                data.forEach((item,index)=>{
+                    $('#insertProducts').append( `
                         <tr>
                             <th scope="row">${index+1}</th>
                             <td>${item.title}</td>
@@ -85,9 +83,9 @@
             "</tr>"
         );
         setTimeout(()=> {
-            $('#insertProducts').html("");
+            $('#insertProducts').empty();
             loadInventory();
-        },1000)
+        },500)
     });
 
     // TODO: Take the data from inventory.json and append it to the products table

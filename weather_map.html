@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- mapbox CSS-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="css/weather-app.css">
+    <title>Weather Map Project</title>
+
+</head>
+<body>
+<nav class="navbar navbar-light text-white shadow">
+    <a class="navbar-brand" href="#">WeatherApp</a>
+    <div class="float-right mr-2">Current Location: <span id="currentCity"></span></div>
+</nav>
+
+<div class="container-flex mt-5 px-4">
+    <form id="locationSearch">
+        <div class="container d-flex justify-content-center">
+            <div class="input-group col-sm-7 input-group-lg">
+                <div class="input-group-prepend">
+                    <span id="searchBarPre" class="input-group-text shadow"></span>
+                </div>
+                <input type="text" class="form-control"  id="searchField" name="searchField" placeholder="search locations">
+                <div class="input-group-append">
+                    <button id="search" type="submit" class="input-group-text btn text-primary shadow">
+                        <i class="fa fa-search p-0"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--openweather-->
+    <div id="fiveDay"  class="card-deck justify-content-between my-3"></div>
+
+    <!--mapbox -->
+    <div id='map' class="w-80 my-5 border rounded" style='height: 300px;'></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/weather_app.js"></script>
+</body>
+</html>

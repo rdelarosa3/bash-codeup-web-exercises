@@ -1,0 +1,50 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: rgb(24, 26, 27);
+}
+a {
+    color: white!important;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: white!important;
+    text-decoration: none!important;
+}
+.card{
+    border: none!important;
+}
+.navbar{
+    background: rgb(222 81 43);
+}
+.card-header{
+    background: rgb(222 81 43);
+    color:white;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: 0 0 0 0 !important
+}
+#search {
+    border-top-right-radius: 32px !important;
+    border-bottom-right-radius: 32px !important;
+    background-color: #fff
+}
+#searchBarPre {
+    border-top-left-radius: 32px !important;
+    border-bottom-left-radius: 32px !important;
+    background-color: #fff
+}
+#searchField{
+    border-left: hidden!important;
+}
+@media only screen and (max-width: 900px) and (min-width: 576px){
+    .card-deck {
+         display: block!important;
+    }
+}
+
