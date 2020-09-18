@@ -2,6 +2,16 @@ $(document).ready(function () {
     // Default coords for weather and map
     let defaultCoords = [-98.4936,29.4241];
 
+    // Get Users current Location
+    const getDeviceLocation = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position)=>{
+                defaultCoords[0] = position.coords.longitude;
+                defaultCoords[1] = position.coords.latitude;
+            });
+        }
+    }
+
     // Convert Unix time to JavaScript Date object * 1000  in milliseconds, not seconds.Return day
     const timeStamp = (unixTimestamp)=>{
         var date = new Date(unixTimestamp * 1000);
@@ -74,15 +84,7 @@ $(document).ready(function () {
         $(`#${dayId}Wind`).html(day.wind_speed);
         $(`#${dayId}Press`).html(day.pressure);
     }
-    // Get Users current Location
-    const getDeviceLocation = () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position)=>{
-                defaultCoords[0] = position.coords.longitude;
-                defaultCoords[1] = position.coords.latitude;
-            });
-        }
-    }
+
 
     // MAPBOXSECTION
     mapboxgl.accessToken = MAPBOXTOKEN;
@@ -157,5 +159,5 @@ $(document).ready(function () {
 
     //get device location and set it on html on page load
     getDeviceLocation();
-    setTimeout(getSearchLocation,800);
+    setTimeout(getSearchLocation,1000);
 })
