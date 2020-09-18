@@ -46,9 +46,10 @@ const longestEmail = users
     .map((user)=> user.email )
     .reduce((a,b)=> a.length > b.length ? a : b );
 
-const instructorsSentence = users.reduce((sentence, user,index)=>{
-    return sentence += (index === users.length - 1) ? `${user.name}.` : `${user.name},`
-},"Your instructors are: ");
+const instructorsSentence = users
+    .reduce((sentence, user,index)=>{
+        return sentence += (index === users.length - 1) ? `${user.name}.` : `${user.name},`
+    },"Your instructors are: ");
 
 const uniqueLanguages = users
     .map((user)=> user.languages)
@@ -59,10 +60,11 @@ const uniqueLanguages = users
         return unique;
     },[]);
 
-console.log(instructorsSentence)
-console.log(uniqueLanguages)
-console.log(threeOrMoreLang);
-console.log(emails);
-console.log(combinedExperience);
-console.log(averageExperience);
-console.log(longestEmail);
+
+console.log(1,threeOrMoreLang);
+console.log(2,emails);
+console.log(3,combinedExperience);
+console.log(4,averageExperience);
+console.log(5,longestEmail);
+console.log(6,instructorsSentence);
+console.log(7,uniqueLanguages);
