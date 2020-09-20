@@ -110,9 +110,9 @@ $(document).ready(function () {
     }
     // Get location name from coordinates
     const getReverseGeocode = (coords,token) => {
-        let lat = coords[0];
-        let lng = coords[1];
-        let url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
+        const lat = coords[0];
+        const lng = coords[1];
+        const url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
             lat + "," + lng + ".json?access_token=" + token;
         $.get(url, function(data){
             $('#currentCity').html(data.features[2].place_name);
@@ -133,7 +133,7 @@ $(document).ready(function () {
 
             // get location when user drags marker
             marker.on('dragend',function () {
-                let markerPosition = marker.getLngLat();
+                const markerPosition = marker.getLngLat();
                 data = [markerPosition.lng,markerPosition.lat];
                 refreshWeatherMap(data);
             })
@@ -159,5 +159,5 @@ $(document).ready(function () {
 
     //get device location and set it on html on page load
     getDeviceLocation();
-    setTimeout(getSearchLocation,1000);
+    setTimeout(getSearchLocation,1200);
 })
