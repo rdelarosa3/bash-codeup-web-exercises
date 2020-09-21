@@ -1,20 +1,21 @@
 const lastCommit = (username)=>{
-    fetch('https://api.github.com/users/' + username + '/events',
+    return fetch('https://api.github.com/users/' + username + '/events',
         {'Authorization': GITACCESSTOKEN})
         .then((response) =>{
             if (!response.ok) throw Error(response.statusText);
             return response.json();
         }).then((data)=> {
-        console.log(
-            data.filter((event)=>{
-                if(event.type === "PushEvent") return event ;
-            })[0].created_at)
+            for(let event of data){
+                if(event.type === "PushEvent")return event.created_at ;
+            }
         })
         .catch((error)=> {
             console.log(error);
         });
 }
-lastCommit('rdelarosa3');
+lastCommit('fmendozaro').then( date=>{
+    console.log("last commit", date)
+});
 const wait= (sec) =>{
     return new Promise((resolve, reject) => {
         setTimeout(() => {
