@@ -43,8 +43,7 @@ const combinedExperience = users.reduce((totalYears,user)=>{
 },0)
 const averageExperience = combinedExperience / users.length;
 const longestEmail = users
-    .map((user)=> user.email )
-    .reduce((a,b)=> a.length > b.length ? a : b );
+    .reduce((longest,user)=> longest.length > user.email.length ? longest : user.email, '' );
 
 const instructorsSentence = users
     .reduce((sentence, user,index)=>{
@@ -52,12 +51,11 @@ const instructorsSentence = users
     },"Your instructors are: ");
 
 const uniqueLanguages = users
-    .map((user)=> user.languages)
-    .reduce((accumlator ,currentValue)=>{
-        return accumlator.concat(currentValue)
-    },[]).reduce((unique,item)=>{
-        unique.includes(item) ? unique : unique.push(item);
-        return unique;
+    .reduce((langs ,user)=>{
+        return langs.concat(user.languages)
+    },[]).reduce((uniqueLangs,lang)=>{
+        uniqueLangs.includes(lang) ? uniqueLangs : uniqueLangs.push(lang);
+        return uniqueLangs;
     },[]);
 
 
