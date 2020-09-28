@@ -75,3 +75,10 @@ for(let developer of developers){
   list += `<li>${developer}</li>`;
 }
 list += '</ul>';
+
+
+users.forEach((user)=> {
+
+  const { name,email,languages} = user;
+
+});
